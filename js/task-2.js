@@ -1,20 +1,14 @@
 function calcAverageCalories(days) {
-  let consumption = [];
   let totalCalories = 0;
-  let averageDailyCalories = 0;
   const keys = Object.keys(days);
 
-  if (keys.length === 0) {
-    return 0;
-  } else {
-    for (const key of keys) {
-      consumption.push(days[key]);
-      totalCalories += consumption[key].calories;
-    }
-    averageDailyCalories = totalCalories / keys.length;
+  if (keys.length === 0) return 0;
 
-    return averageDailyCalories;
+  for (const key of keys) {
+    totalCalories += days[key].calories;
   }
+
+  return totalCalories / keys.length;
 }
 
 console.log(
